@@ -14,9 +14,9 @@ const toCamelCase = (str) => {
 /**
  * @typedef {Object} NamedInputProps
  * @property {String} name 
- * @property {Object} inputType
- * @property {Boolean} [disabled]
- * @property {Boolean} [required]
+ * @property {String} type 
+ * @property {Boolean} [required] 
+ * @property {Object} [inputProps]
  */
 
 /**
@@ -25,7 +25,7 @@ const toCamelCase = (str) => {
  */
 export default class NamedInput extends Component {
   render() {
-    const { name, inputType, disabled, required } = this.props;
+    const { required, name, type, inputProps } = this.props;
 
     return (
       <div className="named-input__flex">
@@ -37,10 +37,9 @@ export default class NamedInput extends Component {
           {name}:
         </label>
         <input
-          type={inputType}
+          {...inputProps}
+          type={type}
           name={toCamelCase(name)}
-          disabled={disabled}
-          required={required}
         ></input>
       </div>
     );

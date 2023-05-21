@@ -24,8 +24,8 @@ class EducationForm extends Component {
     return (
       <FormBlock name={this.props.educationType}>
         <div className="date-range">
-          <NamedInput name="From" inputType="date" required={true}></NamedInput>
-          <NamedInput name="To" inputType="date" required={true}></NamedInput>
+          <NamedInput name="From" type="date" required={true}></NamedInput>
+          <NamedInput name="To" type="date" required={true}></NamedInput>
         </div>
         <label className='select__flex'>
           Institution:

@@ -7,26 +7,26 @@ class GeneralForm extends Component {
     return (
       <FormBlock name="General">
         <NamedInput
-          inputType="text"
           name="First name"
+          type="text"
           required={true}
-          disabled={this.props.disabled}
+          inputProps={{ disabled: this.props.disabled }}
         ></NamedInput>
         <NamedInput
-          inputType="text"
           name="Last name"
+          type="text"
           required={true}
-          disabled={this.props.disabled}
+          inputProps={{ disabled: this.props.disabled }}
         ></NamedInput>
         <NamedInput
-          inputType="email"
           name="Email"
-          disabled={this.props.disabled}
+          type="email"
+          inputProps={{ disabled: this.props.disabled }}
         ></NamedInput>
         <NamedInput
-          inputType="tel"
+          type="tel"
           name="Phone"
-          disabled={this.props.disabled}
+          inputProps={{ disabled: this.props.disabled }}
         ></NamedInput>
       </FormBlock>
     );
