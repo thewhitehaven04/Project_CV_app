@@ -1,8 +1,9 @@
 import './App.css';
 import React, { Component } from 'react';
-import GeneralData from './components/FormBlock';
 import CVHeader from './components/Header';
-import NamedInput from './components/NamedInput';
+import GeneralForm from './components/GeneralForm';
+import EducationForm from './components/EducationForm';
+import { TERTIARY_EDUCATION_INSTITUTIONS } from './data/institutions';
 
 class App extends Component {
   constructor(props) {
@@ -30,39 +31,24 @@ class App extends Component {
   };
 
   render() {
+    const disabled = !this.state.isEditing;
+
     return (
       <div className="App">
         <form onSubmit={this.handleSubmit} method="POST" encType="text/plain">
           <CVHeader
             isEditing={this.state.isEditing}
-            handleEdit={() => {
-              console.log('handle');
-            }}
+            handleEdit={this.handleEdit}
           ></CVHeader>
-          <GeneralData name="General">
-            <NamedInput
-              inputType="text"
-              name="First name"
-              required={true}
-              disabled={!this.state.isEditing}
-            ></NamedInput>
-            <NamedInput
-              inputType="text"
-              name="Last name"
-              required={true}
-              disabled={!this.state.isEditing}
-            ></NamedInput>
-            <NamedInput
-              inputType="email"
-              name="Email"
-              disabled={!this.state.isEditing}
-            ></NamedInput>
-            <NamedInput
-              inputType="tel"
-              name="Phone"
-              disabled={!this.state.isEditing}
-            ></NamedInput>
-          </GeneralData>
+          <GeneralForm disabled={disabled}></GeneralForm>
+          <EducationForm
+            educationType="Primary/Secondary education"
+            institutions={TERTIARY_EDUCATION_INSTITUTIONS}
+          ></EducationForm>
+          <EducationForm
+            educationType="Tertiary education"
+            institutions={TERTIARY_EDUCATION_INSTITUTIONS}
+          ></EducationForm>
         </form>
       </div>
     );

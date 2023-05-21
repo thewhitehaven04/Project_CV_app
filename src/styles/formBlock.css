@@ -1,13 +1,13 @@
 .form-block {
-  width: 100%;
-
   display: flex;
   flex-flow: column nowrap;
   gap: 1rem;
 
+  width: 100%;
   padding: 15px;
-  padding-top: 15px;
   border: none;
+
+  margin-bottom: 20px;
 }
 
 .form-block__header {

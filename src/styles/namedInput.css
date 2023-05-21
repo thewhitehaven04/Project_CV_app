@@ -2,9 +2,10 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-
   row-gap: 1rem;
+
   padding-left: 6px;
+  width: 100%;
 }
 
 .named-input__flex {

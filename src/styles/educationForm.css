@@ -1,0 +1,13 @@
+.date-range {
+  display: flex;
+  flex-flow: row nowrap;
+
+  justify-content: space-between;
+  column-gap: 25px;
+}
+
+.select__flex {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}

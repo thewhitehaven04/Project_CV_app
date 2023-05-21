@@ -13,8 +13,8 @@ const toCamelCase = (str) => {
 
 /**
  * @typedef {Object} NamedInputProps
- * @property {String} name
- * @property {String} inputType
+ * @property {String} name 
+ * @property {Object} inputType
  * @property {Boolean} [disabled]
  * @property {Boolean} [required]
  */
