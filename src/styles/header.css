@@ -1,0 +1,10 @@
+.app-header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.header-controls__inline {
+  display: inline-block;
+}

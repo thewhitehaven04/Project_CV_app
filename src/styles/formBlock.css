@@ -1,0 +1,15 @@
+.form-block {
+  width: 100%;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+
+  padding: 15px;
+  padding-top: 15px;
+  border: none;
+}
+
+.form-block__header {
+  padding-left: 5ch;
+}

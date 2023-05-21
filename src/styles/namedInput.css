@@ -1,0 +1,25 @@
+.named-input__flex {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+
+  row-gap: 1rem;
+  padding-left: 6px;
+}
+
+.named-input__flex {
+  position: relative;
+}
+
+.named-input__required::before {
+  content: '*';
+  color: red;
+
+  position: absolute;
+  left: -0.4em;
+}
+
+.named-input__flex > input:disabled {
+  border: none;
+  color: rgba(255, 255, 255, 0);
+}
