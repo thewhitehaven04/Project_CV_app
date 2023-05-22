@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import FormBlock from '../FormBlock';
 import NamedInput from '../NamedInput';
 import style from './../../styles/educationForm.css';
+import NamedSelect from '../NamedSelect';
 
 /**
  * @typedef {Object} EducationFormProps
@@ -19,7 +20,7 @@ import style from './../../styles/educationForm.css';
  * @class
  * @extends {Component<EducationFormProps>}
  */
-class EducationForm extends Component {
+class EducationFormBlock extends Component {
   render() {
     return (
       <FormBlock name={this.props.educationType}>
@@ -27,21 +28,13 @@ class EducationForm extends Component {
           <NamedInput name="From" type="date" required={true}></NamedInput>
           <NamedInput name="To" type="date" required={true}></NamedInput>
         </div>
-        <label className='select__flex'>
-          Institution:
-          <select name="institution">
-            {this.props.institutions.map((institution) => {
-              return (
-                <option value={institution.name} key={institution.name}>
-                  {institution.displayName}
-                </option>
-              );
-            })}
-          </select>
-        </label>
+        <NamedSelect
+          name={this.props.educationType}
+          data={this.props.institutions}
+        ></NamedSelect>
       </FormBlock>
     );
   }
 }
 
-export default EducationForm;
+export default EducationFormBlock;

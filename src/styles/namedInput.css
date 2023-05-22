@@ -3,13 +3,8 @@
   flex-flow: row nowrap;
   justify-content: space-between;
   row-gap: 1rem;
-
-  padding-left: 6px;
-  width: 100%;
-}
-
-.named-input__flex {
   position: relative;
+  width: 100%;
 }
 
 .named-input__required::before {
@@ -17,10 +12,5 @@
   color: red;
 
   position: absolute;
-  left: -0.4em;
-}
-
-.named-input__flex > input:disabled {
-  border: none;
-  color: rgba(255, 255, 255, 0);
+  left: -0.8em;
 }

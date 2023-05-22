@@ -13,6 +13,6 @@
 }
 
 .App {
-  width: clamp(320px, 90%, 800px);
+  width: clamp(320px, 90%, 700px);
   margin: 0 auto;
 }

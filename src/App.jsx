@@ -1,9 +1,10 @@
 import './App.css';
 import React, { Component } from 'react';
 import CVHeader from './components/Header';
-import GeneralForm from './components/GeneralForm';
-import EducationForm from './components/EducationForm';
+import GeneralFormBlock from './components/GeneralForm';
+import EducationFormBlock from './components/EducationForm';
 import { TERTIARY_EDUCATION_INSTITUTIONS } from './data/institutions';
+import JobExperienceFormBlock from './components/JobExperience';
 
 class App extends Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class App extends Component {
 
   handleEdit = (e) => {
     this.setState({
-      isEditing: false,
+      isEditing: true,
     });
   };
 
@@ -40,15 +41,16 @@ class App extends Component {
             isEditing={this.state.isEditing}
             handleEdit={this.handleEdit}
           ></CVHeader>
-          <GeneralForm disabled={disabled}></GeneralForm>
-          <EducationForm
+          <GeneralFormBlock disabled={disabled}></GeneralFormBlock>
+          <EducationFormBlock
             educationType="Primary/Secondary education"
             institutions={TERTIARY_EDUCATION_INSTITUTIONS}
-          ></EducationForm>
-          <EducationForm
+          ></EducationFormBlock>
+          <EducationFormBlock
             educationType="Tertiary education"
             institutions={TERTIARY_EDUCATION_INSTITUTIONS}
-          ></EducationForm>
+          ></EducationFormBlock>
+          <JobExperienceFormBlock></JobExperienceFormBlock>
         </form>
       </div>
     );

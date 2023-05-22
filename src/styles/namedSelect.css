@@ -1,7 +1,7 @@
-.date-range {
+.select__flex {
   display: flex;
   flex-flow: row nowrap;
-
   justify-content: space-between;
-  column-gap: 50px;
+  
+  width: 100%;
 }

@@ -1,22 +1,15 @@
 import React from 'react';
 import { Component } from 'react';
 import style from './../../styles/namedInput.css';
-
-/** @param {String} str */
-const toCamelCase = (str) => {
-  const spaceSeparatedTokens = str.split(' ');
-  const capitals = spaceSeparatedTokens
-    .slice(1)
-    .map((token) => token.substring(0, 1).toUpperCase() + token.substring(1));
-  return spaceSeparatedTokens[0].toLowerCase().concat(...capitals);
-};
+import { toCamelCase } from '../../utils/strings';
 
 /**
  * @typedef {Object} NamedInputProps
- * @property {String} name 
- * @property {String} type 
- * @property {Boolean} [required] 
- * @property {Object} [inputProps]
+ * @property {String} name
+ * @property {String} type
+ * @property {Boolean} [disabled]
+ * @property {Boolean} [required]
+ * @property {React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>} [inputProps]
  */
 
 /**
@@ -24,8 +17,21 @@ const toCamelCase = (str) => {
  * @extends {Component<NamedInputProps>}
  */
 export default class NamedInput extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: '',
+    };
+  }
+
+  handleChange = (e) => {
+    this.setState({
+      value: e.target.value,
+    });
+  };
+
   render() {
-    const { required, name, type, inputProps } = this.props;
+    const { required, name, type, disabled, inputProps } = this.props;
 
     return (
       <div className="named-input__flex">
@@ -36,11 +42,18 @@ export default class NamedInput extends Component {
         >
           {name}:
         </label>
-        <input
-          {...inputProps}
-          type={type}
-          name={toCamelCase(name)}
-        ></input>
+        {disabled ? (
+          <span>{this.state.value}</span>
+        ) : (
+          <input
+            {...inputProps}
+            type={type}
+            name={toCamelCase(name)}
+            id={toCamelCase(name)}
+            onChange={this.handleChange}
+            value={this.state.value}
+          ></input>
+        )}
       </div>
     );
   }

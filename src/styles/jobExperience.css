@@ -1,0 +1,22 @@
+.textarea__flex {
+  display: flex;
+  flex-flow: row nowrap;
+  
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.textarea__flex > textarea {
+  width: 70%;
+  min-width: 300px;
+  min-height: 30px;
+  resize: vertical;
+}
+
+.date-range {
+  display: flex;
+  flex-flow: row nowrap;
+
+  justify-content: space-between;
+  column-gap: 50px;
+}

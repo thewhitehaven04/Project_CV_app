@@ -5,11 +5,12 @@
 
   width: 100%;
   padding: 15px;
+  padding-left: 30px;
   border: none;
 
   margin-bottom: 20px;
 }
 
 .form-block__header {
-  padding-left: 5ch;
+  padding-left: 2ch;
 }
