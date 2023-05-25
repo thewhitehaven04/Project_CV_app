@@ -3,13 +3,13 @@ import React from 'react';
 import style from './../../styles/formBlock.css';
 
 /**
- * @typedef {Object} FormBlockProps 
+ * @typedef {Object} FormBlockProps
  * @property {String} name
  * @property {{
- *  displayName: String, 
+ *  displayName: String,
  *  handleClick: function(): void
  * }[]
- * } buttons 
+ * } buttons
  */
 
 /**
@@ -28,7 +28,11 @@ class FormBlock extends Component {
             <div className="form-block__header-buttons">
               {this.props.buttons.map((b) => {
                 return (
-                  <button type="button" onClick={b.handleClick}>
+                  <button
+                    type="button"
+                    onClick={b.handleClick}
+                    className="form-block__button_header"
+                  >
                     {b.displayName}
                   </button>
                 );

@@ -14,3 +14,24 @@
   position: absolute;
   left: -0.8em;
 }
+
+.named-input {
+  border: 1px solid #DDD;
+  border-radius: 3px;
+  height: 1.7em;
+  padding: 7px; 
+}
+
+.named-input[type="text"], 
+.named-input[type="email"],
+.named-input[type="tel"] {
+  width: clamp(100px, 80%, 250px);
+}
+
+.named-input[type="date"] {
+  width: 150px;
+}
+
+.named-input__inactive {
+  height: 2em;
+}

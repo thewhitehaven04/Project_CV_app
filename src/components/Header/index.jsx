@@ -10,7 +10,7 @@ import style from './../../styles/header.css';
 
 /**
  * @class
- * @extends {Component<HeaderProps>} 
+ * @extends {Component<HeaderProps>}
  */
 class CVHeader extends Component {
   render() {
@@ -18,9 +18,15 @@ class CVHeader extends Component {
       <header className="app-header">
         <h1>CV Application</h1>
         <div className="header-controls__inline">
-          <button type="submit">Submit</button>
+          <button type="submit" className="header-controls__button">
+            Submit
+          </button>
           {!this.props.isEditing && (
-            <button type="button" onClick={this.props.handleEdit}>
+            <button
+              type="button"
+              onClick={this.props.handleEdit}
+              className="header-controls__button"
+            >
               Edit
             </button>
           )}

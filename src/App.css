@@ -1,9 +1,11 @@
+@import "normalize.css";
 
 :root {
   box-sizing: border-box;
 
   font-family: 'Lato';
   font-size: 12pt;
+  color: #333;
 }
 
 *,
@@ -15,4 +17,8 @@
 .App {
   width: clamp(320px, 90%, 700px);
   margin: 0 auto;
+}
+
+button {
+  appearance: none;
 }

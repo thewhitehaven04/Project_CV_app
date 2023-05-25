@@ -52,6 +52,7 @@ export default class NamedInput extends Component {
             id={toCamelCase(name)}
             onChange={this.handleChange}
             value={this.state.value}
+            className='named-input'
           ></input>
         )}
       </div>

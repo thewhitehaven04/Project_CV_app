@@ -1,7 +1,7 @@
 .form-block {
   display: flex;
   flex-flow: column nowrap;
-  gap: 1rem;
+  row-gap: 10px;
 
   width: 100%;
   padding: 15px;
@@ -11,11 +11,34 @@
   margin-bottom: 20px;
 }
 
-.form-block__header {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: space-between;
+@media screen and (min-width: 426px) {
+  .form-block__header {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
 
-  padding-left: 2ch;
+    padding-left: 2ch;
+  }
+}
+  
+.form-block__header {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.form-block__button_header {
+  padding: 4px 8px;
+  border-radius: 3px;
+  border: 1px solid #CCC;
+  background-color: white;
+  color: black;
+}
+
+.form-block__button_header:active {
+  cursor: pointer;
+  border: 1px solid #AAA;
 }

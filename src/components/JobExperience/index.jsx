@@ -16,7 +16,7 @@ import style from './../../styles/jobExperience.css';
 class JobExperience extends Component {
   render() {
     return (
-      <article className="form-block">
+      <article className='job-entry__flex'>
         {/* this is cheating: this component should really have no 
         knowledge of CSS classes that belong to FormBlock component */}
         <div className="date-range">

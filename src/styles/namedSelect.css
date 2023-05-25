@@ -1,7 +1,9 @@
 .select__flex {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: space-between;
-  
+  column-gap: 10px;
+  row-gap: 5px;
+
   width: 100%;
 }
