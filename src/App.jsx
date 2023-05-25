@@ -3,7 +3,10 @@ import React, { Component } from 'react';
 import CVHeader from './components/Header';
 import GeneralFormBlock from './components/GeneralForm';
 import EducationFormBlock from './components/EducationForm';
-import { TERTIARY_EDUCATION_INSTITUTIONS } from './data/institutions';
+import {
+  SCHOOL_INSTITUTIONS,
+  TERTIARY_EDUCATION_INSTITUTIONS,
+} from './data/institutions';
 import JobExperienceFormBlock from './components/JobExperience';
 
 class App extends Component {
@@ -44,7 +47,7 @@ class App extends Component {
           <GeneralFormBlock disabled={disabled}></GeneralFormBlock>
           <EducationFormBlock
             educationType="Primary/Secondary education"
-            institutions={TERTIARY_EDUCATION_INSTITUTIONS}
+            institutions={SCHOOL_INSTITUTIONS}
           ></EducationFormBlock>
           <EducationFormBlock
             educationType="Tertiary education"

@@ -53,6 +53,7 @@ export default class NamedInput extends Component {
             onChange={this.handleChange}
             value={this.state.value}
             className='named-input'
+            required={true}
           ></input>
         )}
       </div>
