@@ -1,5 +1,5 @@
 import './App.css';
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import CVHeader from './components/Header';
 import GeneralFormBlock from './components/GeneralForm';
 import EducationFormBlock from './components/EducationForm';
@@ -15,7 +15,7 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(Object.fromEntries([...new FormData(e.target).entries()]));
-    setIsEditing(true);
+    setIsEditing(false);
   };
 
   const handleEdit = (e) => {

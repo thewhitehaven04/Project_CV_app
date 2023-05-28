@@ -3,6 +3,7 @@ import FormBlock from '../FormBlock';
 import NamedInput from '../NamedInput';
 import style from './../../styles/educationForm.css';
 import NamedSelect from '../NamedSelect';
+import { toCamelCase } from '../../utils/strings';
 
 /**
  * @typedef {Object} EducationFormProps
@@ -17,24 +18,27 @@ import NamedSelect from '../NamedSelect';
  */
 
 /**
- * @class
- * @extends {Component<EducationFormProps>}
+ * @param {EducationFormProps} props
  */
-class EducationFormBlock extends Component {
-  render() {
-    return (
-      <FormBlock name={this.props.educationType}>
-        <div className="date-range">
-          <NamedInput name="From" type="date" required={true}></NamedInput>
-          <NamedInput name="To" type="date" required={true}></NamedInput>
-        </div>
-        <NamedSelect
-          name={this.props.educationType}
-          data={this.props.institutions}
-        ></NamedSelect>
-      </FormBlock>
-    );
-  }
+export default function EducationFormBlock(props) {
+  return (
+    <FormBlock name={props.educationType}>
+      <div className="date-range">
+        <NamedInput
+          name='From'
+          type="date"
+          required={true}
+        ></NamedInput>
+        <NamedInput
+          name='To'
+          type="date"
+          required={true}
+        ></NamedInput>
+      </div>
+      <NamedSelect
+        name={props.educationType}
+        data={props.institutions}
+      ></NamedSelect>
+    </FormBlock>
+  );
 }
-
-export default EducationFormBlock;

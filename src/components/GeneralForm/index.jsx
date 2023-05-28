@@ -8,38 +8,33 @@ import FormBlock from '../FormBlock';
  */
 
 /**
- * @class 
- * @augments Component<GeneralFormProps>
+ * @param {GeneralFormProps} props
  */
-class GeneralFormBlock extends Component {
-  render() {
-    return (
-      <FormBlock name="General">
-        <NamedInput
-          name="First name"
-          type="text"
-          required={true}
-          disabled={this.props.disabled}
-        ></NamedInput>
-        <NamedInput
-          name="Last name"
-          type="text"
-          required={true}
-          disabled={this.props.disabled}
-        ></NamedInput>
-        <NamedInput
-          name="Email"
-          type="email"
-          disabled={this.props.disabled}
-        ></NamedInput>
-        <NamedInput
-          type="tel"
-          name="Phone"
-          disabled={this.props.disabled}
-        ></NamedInput>
-      </FormBlock>
-    );
-  }
+export default function GeneralFormBlock(props) {
+  return (
+    <FormBlock name="General">
+      <NamedInput
+        name="First name"
+        type="text"
+        required={true}
+        disabled={props.disabled}
+      ></NamedInput>
+      <NamedInput
+        name="Last name"
+        type="text"
+        required={true}
+        disabled={props.disabled}
+      ></NamedInput>
+      <NamedInput
+        name="Email"
+        type="email"
+        disabled={props.disabled}
+      ></NamedInput>
+      <NamedInput
+        type="tel"
+        name="Phone"
+        disabled={props.disabled}
+      ></NamedInput>
+    </FormBlock>
+  );
 }
-
-export default GeneralFormBlock;

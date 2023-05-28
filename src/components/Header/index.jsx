@@ -9,31 +9,26 @@ import style from './../../styles/header.css';
  */
 
 /**
- * @class
- * @extends {Component<HeaderProps>}
+ * @param {HeaderProps} props
  */
-class CVHeader extends Component {
-  render() {
-    return (
-      <header className="app-header">
-        <h1>CV Application</h1>
-        <div className="header-controls__inline">
-          <button type="submit" className="header-controls__button">
-            Submit
+export default function CVHeader(props) {
+  return (
+    <header className="app-header">
+      <h1>CV Application</h1>
+      <div className="header-controls__inline">
+        <button type="submit" className="header-controls__button">
+          Submit
+        </button>
+        {!props.isEditing && (
+          <button
+            type="button"
+            onClick={props.handleEdit}
+            className="header-controls__button"
+          >
+            Edit
           </button>
-          {!this.props.isEditing && (
-            <button
-              type="button"
-              onClick={this.props.handleEdit}
-              className="header-controls__button"
-            >
-              Edit
-            </button>
-          )}
-        </div>
-      </header>
-    );
-  }
+        )}
+      </div>
+    </header>
+  );
 }
-
-export default CVHeader;

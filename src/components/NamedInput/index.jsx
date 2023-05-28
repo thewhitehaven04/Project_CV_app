@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Component } from 'react';
 import style from './../../styles/namedInput.css';
 import { toCamelCase } from '../../utils/strings';
@@ -13,50 +13,37 @@ import { toCamelCase } from '../../utils/strings';
  */
 
 /**
- * @class
- * @extends {Component<NamedInputProps>}
+ * @param {NamedInputProps} props
  */
-export default class NamedInput extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: '',
-    };
-  }
+export default function NamedInput(props) {
+  const [value, setValue] = useState('');
+  const { required, name, type, disabled, inputProps } = props;
 
-  handleChange = (e) => {
-    this.setState({
-      value: e.target.value,
-    });
-  };
+  const handleChange = (e) => setValue(e.target.value);
 
-  render() {
-    const { required, name, type, disabled, inputProps } = this.props;
-
-    return (
-      <div className="named-input__flex">
-        <label
-          className={
-            'named-input__flex' + (required ? ' named-input__required' : '')
-          }
-        >
-          {name}:
-        </label>
-        {disabled ? (
-          <span>{this.state.value}</span>
-        ) : (
-          <input
-            {...inputProps}
-            type={type}
-            name={toCamelCase(name)}
-            id={toCamelCase(name)}
-            onChange={this.handleChange}
-            value={this.state.value}
-            className='named-input'
-            required={true}
-          ></input>
-        )}
-      </div>
-    );
-  }
+  return (
+    <div className="named-input__flex">
+      <label
+        className={
+          'named-input__flex' + (required ? ' named-input__required' : '')
+        }
+      >
+        {name}:
+      </label>
+      {disabled ? (
+        <span>{value !== '' ? value : 'N/A'}</span>
+      ) : (
+        <input
+          {...inputProps}
+          type={type}
+          name={toCamelCase(name)}
+          id={toCamelCase(name)}
+          onChange={handleChange}
+          value={value}
+          className="named-input"
+          required={required}
+        ></input>
+      )}
+    </div>
+  );
 }
