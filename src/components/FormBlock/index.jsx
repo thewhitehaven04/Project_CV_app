@@ -32,6 +32,7 @@ class FormBlock extends Component {
                     type="button"
                     onClick={b.handleClick}
                     className="form-block__button_header"
+                    key={b.displayName}
                   >
                     {b.displayName}
                   </button>
