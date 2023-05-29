@@ -1,5 +1,4 @@
 import React from 'react';
-import { Component } from 'react';
 import style from './../../styles/header.css';
 
 /**
@@ -16,15 +15,9 @@ export default function CVHeader(props) {
     <header className="app-header">
       <h1>CV Application</h1>
       <div className="header-controls__inline">
-        <button type="submit" className="header-controls__button">
-          Submit
-        </button>
+        <button type="submit">Submit</button>
         {!props.isEditing && (
-          <button
-            type="button"
-            onClick={props.handleEdit}
-            className="header-controls__button"
-          >
+          <button type="button" onClick={props.handleEdit}>
             Edit
           </button>
         )}

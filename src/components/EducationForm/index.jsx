@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import FormBlock from '../FormBlock';
 import NamedInput from '../NamedInput';
 import style from './../../styles/educationForm.css';
 import NamedSelect from '../NamedSelect';
-import { toCamelCase } from '../../utils/strings';
 
 /**
  * @typedef {Object} EducationFormProps

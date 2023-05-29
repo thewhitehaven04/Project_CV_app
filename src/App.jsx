@@ -8,6 +8,7 @@ import {
   TERTIARY_EDUCATION_INSTITUTIONS,
 } from './data/institutions';
 import JobExperienceFormBlock from './components/JobExperience';
+import SkillsBlock from './components/SkillsBlock';
 
 function App() {
   const [isEditing, setIsEditing] = useState(true);
@@ -25,17 +26,18 @@ function App() {
   return (
     <div className="App">
       <form onSubmit={handleSubmit} method="POST" encType="text/plain">
-        <CVHeader isEditing={isEditing} handleEdit={handleEdit}></CVHeader>
-        <GeneralFormBlock disabled={!isEditing}></GeneralFormBlock>
+        <CVHeader isEditing={isEditing} handleEdit={handleEdit} />
+        <GeneralFormBlock disabled={!isEditing} />
         <EducationFormBlock
           educationType="Primary/Secondary education"
           institutions={SCHOOL_INSTITUTIONS}
-        ></EducationFormBlock>
+        />
         <EducationFormBlock
           educationType="Tertiary education"
           institutions={TERTIARY_EDUCATION_INSTITUTIONS}
-        ></EducationFormBlock>
-        <JobExperienceFormBlock></JobExperienceFormBlock>
+        />
+        <JobExperienceFormBlock />
+        <SkillsBlock />
       </form>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React  from 'react';
 import NamedInput from '../NamedInput';
 import FormBlock from '../FormBlock';
 

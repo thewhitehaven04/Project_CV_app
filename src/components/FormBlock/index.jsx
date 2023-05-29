@@ -1,4 +1,3 @@
-import { Component } from 'react';
 import React from 'react';
 import style from './../../styles/formBlock.css';
 
@@ -29,7 +28,6 @@ export default function FormBlock(props) {
                 <button
                   type="button"
                   onClick={b.handleClick}
-                  className="form-block__button_header"
                   key={b.displayName}
                 >
                   {b.displayName}

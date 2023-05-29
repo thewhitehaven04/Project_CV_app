@@ -1,8 +1,7 @@
-import { Component, useState } from 'react';
+import React, { useState } from 'react';
 import NamedInput from '../NamedInput';
-import React from 'react';
 import FormBlock from '../FormBlock';
-import style from './../../styles/jobExperience.css';
+import style from '../../styles/jobExperience.css';
 
 /**
  * @typedef {Object} JobExperienceProps
@@ -15,25 +14,25 @@ import style from './../../styles/jobExperience.css';
 function JobExperience(props) {
   return (
     <article className="job-entry__flex">
-      {/* this is cheating: this component should really have no 
+      {/* this is cheating: this component should really have no
         knowledge of CSS classes that belong to FormBlock component */}
       <div className="date-range">
         <NamedInput
           name="From"
           type="date"
           disabled={props.disabled}
-        ></NamedInput>
+        />
         <NamedInput
           name="To"
           type="date"
           disabled={props.disabled}
-        ></NamedInput>
+        />
       </div>
-      <NamedInput name="Company name" type="text" required={true}></NamedInput>
-      <NamedInput name="Position" type="text" required={true}></NamedInput>
+      <NamedInput name="Company name" type="text" required />
+      <NamedInput name="Position" type="text" required />
       <div className="textarea__flex">
         <label htmlFor="responsibility">Job Responsibilities:</label>
-        <textarea name="responsibility" maxLength={1000} rows={4}></textarea>
+        <textarea name="responsibility" maxLength={1000} rows={4} />
       </div>
     </article>
   );
@@ -47,12 +46,12 @@ export default function JobExperienceForm(props) {
   return (
     <FormBlock
       name="Job experience"
-      buttons={[{ displayName: 'Add new', handleClick: handleClick }]}
+      buttons={[{ displayName: 'Add new', handleClick }]}
     >
       {Array(jobCount)
         .fill(null)
         .map((_, i) => (
-          <JobExperience key={i} disabled={props.disabled}></JobExperience>
+          <JobExperience key={i} disabled={props.disabled} />
         ))}
     </FormBlock>
   );
