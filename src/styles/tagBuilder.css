@@ -17,7 +17,7 @@
 }
 
 .skills-input {
-  border: 1px solid #DDD;
+  border: 1px solid var(--air-force-blue);
   border-radius: 3px;
   height: 1.7em;
   padding: 7px; 

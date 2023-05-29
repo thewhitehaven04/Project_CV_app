@@ -1,11 +1,16 @@
-@import "normalize.css";
+@import 'normalize.css';
 
 :root {
   box-sizing: border-box;
 
   font-family: 'Lato';
   font-size: 12pt;
-  color: #333;
+  color: var(--jet);
+
+  --air-force-blue: #7293a0;
+  --jet: #333138;
+  --isabeline: #fbfcff;
+  --green: #0f1a20;
 }
 
 *,
@@ -21,11 +26,21 @@
 
 button {
   appearance: none;
-  
+
   padding: 4px 8px;
-  background-color: white;
-  border: 1px solid #CCC;
+  background-color: var(--ccc);
+  border: 1px solid var(--green);
   border-radius: 3px;
 
   margin: 5px;
+}
+
+h2 {
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+input:focus,
+textarea:focus {
+  outline: 1px solid var(--green);
 }

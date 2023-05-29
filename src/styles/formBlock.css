@@ -4,9 +4,13 @@
   row-gap: 10px;
 
   width: 100%;
-  padding: 15px;
+  padding: 20px;
   padding-left: 30px;
-  border: none;
+  border-radius: 4px;
+  
+  border: 0.9px solid var(--air-force-blue);
+  box-shadow: 0px 0px 2px 0.1px var(--air-force-blue);
+  background-color: var(--isabeline);
 
   margin-bottom: 20px;
 }
