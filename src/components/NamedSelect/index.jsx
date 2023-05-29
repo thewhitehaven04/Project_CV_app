@@ -1,5 +1,4 @@
 import React from 'react';
-import { Component } from 'react';
 import { toCamelCase } from '../../utils/strings';
 import style from './../../styles/namedSelect.css';
 
@@ -16,26 +15,21 @@ import style from './../../styles/namedSelect.css';
  */
 
 /**
- * @class
- * @augments Component<NamedSelectProps>
+ * @param {NamedSelectProps} props
  */
-class NamedSelect extends Component {
-  render() {
-    return (
-      <label className="select__flex">
-        {this.props.name}:
-        <select name={toCamelCase(this.props.name)}>
-          {this.props.data.map((entry) => {
-            return (
-              <option value={entry.name} key={entry.name}>
-                {entry.displayName}
-              </option>
-            );
-          })}
-        </select>
-      </label>
-    );
-  }
+export default function NamedSelect(props) {
+  return (
+    <label className="select__flex">
+      {props.name}:
+      <select name={toCamelCase(props.name)}>
+        {props.data.map((entry) => {
+          return (
+            <option value={entry.name} key={entry.name}>
+              {entry.displayName}
+            </option>
+          );
+        })}
+      </select>
+    </label>
+  );
 }
-
-export default NamedSelect;

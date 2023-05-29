@@ -1,7 +1,4 @@
-/**
- * @type import("../components/EducationForm").Institution[]
- */
-
+/** @type import("../components/EducationForm").Institution[] */
 const TERTIARY_EDUCATION_INSTITUTIONS = [
   { displayName: 'Massachusetts Institute of Technology', name: 'us_mit' },
   { displayName: 'University of Oxford', name: 'uk_oxford' },
@@ -13,6 +10,7 @@ const TERTIARY_EDUCATION_INSTITUTIONS = [
   },
 ];
 
+/** @type import("../components/EducationForm").Institution[] */
 const SCHOOL_INSTITUTIONS = [
   { displayName: 'Avondale Junior School', name: 'avondale_js' },
   { displayName: 'Vainona Primary School', name: 'vainona_ps' },

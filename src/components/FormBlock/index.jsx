@@ -1,4 +1,3 @@
-import { Component } from 'react';
 import React from 'react';
 import style from './../../styles/formBlock.css';
 
@@ -13,38 +12,32 @@ import style from './../../styles/formBlock.css';
  */
 
 /**
- * @class
- * @augments Component<FormBlockProps>
+ * @param {FormBlockProps} props
  */
-class FormBlock extends Component {
-  render() {
-    return (
-      <fieldset className="form-block">
-        <div className="form-block__header">
-          <legend>
-            <h2>{this.props.name}</h2>
-          </legend>
-          {!!this.props.buttons && (
-            <div className="form-block__header-buttons">
-              {this.props.buttons.map((b) => {
-                return (
-                  <button
-                    type="button"
-                    onClick={b.handleClick}
-                    className="form-block__button_header"
-                    key={b.displayName}
-                  >
-                    {b.displayName}
-                  </button>
-                );
-              })}
-            </div>
-          )}
-        </div>
-        {this.props.children}
-      </fieldset>
-    );
-  }
+export default function FormBlock(props) {
+  return (
+    <fieldset className="form-block">
+      <div className="form-block__header">
+        <legend>
+          <h2>{props.name}</h2>
+        </legend>
+        {!!props.buttons && (
+          <div className="form-block__header-buttons">
+            {props.buttons.map((b) => {
+              return (
+                <button
+                  type="button"
+                  onClick={b.handleClick}
+                  key={b.displayName}
+                >
+                  {b.displayName}
+                </button>
+              );
+            })}
+          </div>
+        )}
+      </div>
+      {props.children}
+    </fieldset>
+  );
 }
-
-export default FormBlock;

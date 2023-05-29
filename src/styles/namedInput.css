@@ -29,7 +29,7 @@
 }
 
 .named-input[type="date"] {
-  width: 150px;
+  min-width: 125px;
 }
 
 .named-input__inactive {
